@@ -122,7 +122,6 @@
                 var lastIndex = word.lastIndexOf(" ");
                 word = word.substring(0, lastIndex);
                 document.getElementById("enteredTextBox").innerHTML=word;
-                //alert(document.getElementById("enteredTextBox").innerHTML);
                 }
             });
             function showToast() {
@@ -130,33 +129,6 @@
                 x.className = "show";
                 setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
             }
-          //  var count=10;
-          //  var listWords=null;
-          //  var inputStr="";
-            //var set2 = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
-            /*
-        var Url = appendTimestamp('/servlet/SDAjaxServlet'); //No I18N
-        var tempAjax = jQuery.ajax({
-        dataType: "json",//No I18N
-        url: Url,
-        async:false,
-        type: 'post', //No I18N
-        data: {action: "isApprovalEnabled",module: "Request",woID:woId}, //No I18N
-        success: function (resp) {
-          if(resp.approvalNeeded=="Yes")//No I18N
-          {
-            var result=confirm(getMessageForKey("sdp.request.autoapproval.techwarning")); //No I18N
-            if(!result)
-            {
-               jQuery('#pickupTech').attr('href',"javascript:(0)");//No I18N
-               window.location.reload();
-            }
-          }
-          return true;
-        }
-      })
-           */  
-          
            
             jQuery("#moreWords2").select2({
                 minimumInputLength: 1,
@@ -176,21 +148,10 @@
                      
                         results: function(data,page)
                         {
-                           //console.log(data.matchedArrayJSON)
-                           //var error=" ";
-                           //console.log(data==);
-                          // if(data.matchedArrayJSON!=undefined){
-                            //error=" ";
-                            //document.getElementById("showError").innerHTML=error;
                             return{
                                 results: data.matchedArrayJSON,
                                 more: (page * 10) < data.totalFind
                                 };
-                            //}
-                           // else
-                              //  error="Invalid Input..";
-                            
-                           // document.getElementById("showError").innerHTML=error;
                         },
                         error: function(e){
                             alert('Error: ' + e);
@@ -207,24 +168,6 @@
                 
                  document.getElementById("enteredTextBox").innerHTML+=" "+selOption;   
               });
-           
-          
-            function functionSuggestion()
-            {
-
-                if(this.readyState==4 /*Complete*/ && this.status==200/*OK Response*/ )
-                {
-                    
-                    var hintWords=this.responseText;
-                    var wordsObj=JSON.parse(hintWords);
-                    //inputStr=wordsObj.searchString;
-                    $('#moreWords2').select2("data",wordsObj);
-                }
-                
-        }
-            
-        
-            
     });
      
     </script>
